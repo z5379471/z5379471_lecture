@@ -16,11 +16,11 @@ DSTFILE = os.path.join(cfg.DATADIR, 'new_file.txt')
 # ----------------------------------------------------------------------------
 # This will open the file located at `SRCFILE` and return a handler (file
 # object):
-fobj  = '?'
+fobj  = open(SRCFILE, mode='r')
 
 # We can get the entire content of the file by calling the method `.read()`,
 # without parameters:
-cnts  = '?'
+cnts  = fobj.read()
 
 # The variable `cnts` will be a string containing the full contents of the
 # file. This will print the first 20 characters:
