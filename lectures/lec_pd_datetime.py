@@ -71,13 +71,13 @@ print(dt_now.day) # --> 18 ( 18 号）
 #
 
 # Operations between datetime objects will return timedelta objects
-delta  = '?'
+delta  = dt1 - dt0
 #print(repr(delta))
 #print(delta)
 
 
 # These two dates are 12 hours apart
-new_delta  = '?'
+new_delta  = t1 - t2
 #print(new_delta)
 
 
@@ -122,10 +122,10 @@ new_delta  = '?'
 # | %c        | Locale's appropriate date and time representation.            | Tue Aug 16 21:30:00 1988 |
 
 # Create a datatime object
-date  = '?'
+date  = dt.datetime(year=2020, month=12, day=31, hour=0)
 
 # Create a string with the representation we want:
-s  = '?'
+s  = date.strftime('%Y-%m-%d')
 #print(s)
 
 
@@ -156,11 +156,11 @@ s  = '?'
 # Compare these two cases:
 
 # prc['Date'] is a series
-dser  = '?'
+dser  = pd.to_datetime(prc['Date'], format='%Y-%m-%d')
 #print(dser)
 
 # prc['Date'].array is a pandas array
-didx  = '?'
+didx  = pd.to_datetime(prc['Date'].array, format='%Y-%m-%d')
 #print(didx)
 
 # Convert the elements in the Date column
@@ -170,7 +170,7 @@ didx  = '?'
 # ----------------------------------------------------------------------------
 #   Setting the index
 # ----------------------------------------------------------------------------
-another_df  = '?'
+another_df  = prc.set_index('Date')
 #another_df.info()
 
 # Override the variable with another dataframe
